@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "clean-french-irve"
+version = "0.1.0"
+description = ""
+authors = ["Bastien GAUTHIER"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "clean_french_irve"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pandas = "^2.0"
+matplotlib = "^3.7"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
