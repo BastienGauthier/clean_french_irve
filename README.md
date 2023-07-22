@@ -1,7 +1,7 @@
 # Nettoyage des données IRVE de data.gouv.fr
-Ce repository vise à avoir des données de borne de recharge électrique à jour et nettoyées, basée sur les données de data.gouv.fr.
-
-Le nettoyage effectué est très simple et s'appuie sur deux règles :
+Ce repository vise à avoir des données de borne de recharge électrique à jour et nettoyées, basée sur les données de data.gouv.fr.  
+  
+Le nettoyage effectué est très simple et s'appuie sur deux règles :  
     1 - Le id_pdc_itinerance est unique  
     2 - La puissance_nominale d'une borne publique ne peut être supérieure à 2MW  
 
