@@ -4,6 +4,8 @@ Ce repository vise à avoir des données de borne de recharge électrique à jou
 Le nettoyage effectué est très simple et s'appuie sur deux règles :  
     1 - Le id_pdc_itinerance est unique  
     2 - La puissance_nominale d'une borne publique ne peut être supérieure à 2MW  
+  
+Pour pallier aux chutes momentanées de nombre de points de connections, un fichier "robust" a été créé. Il correspond au fichier ayant eu le plus de point de connections après nettoyage depuis le début du suivi.
 
 ## Unicité du id_pdc_itinerance
 Les id_pdc_itinerance sont supposés être uniques. Cependant, lors de mise à jour de données ou lors de doubles déclarations, il peut arriver que la consolidation récupère deux fois un même point de connection. Dans ce cas, les valeurs sont filtrées et seule la dernière modification est prise en compte.

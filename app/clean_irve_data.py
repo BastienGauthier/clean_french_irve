@@ -18,3 +18,15 @@ df_irve_clean = df_irve_clean.drop_duplicates('id_pdc_itinerance', keep='last')
 
 # Write new file
 df_irve_clean.to_csv('data/df_irve_etalab_cleaned.csv')
+
+# Read data to detect if no regression occured
+df_irve_clean_robust = pd.read_csv(
+    'data/df_irve_etalab_cleaned_robust.csv', 
+    index_col = 0
+    )
+
+n_pdc = df_irve_clean.shape[0]
+n_pdc_robust = df_irve_clean_robust.shape[0]
+
+if n_pdc >= n_pdc_robust:
+    df_irve_clean.to_csv('data/df_irve_etalab_cleaned_robust.csv')

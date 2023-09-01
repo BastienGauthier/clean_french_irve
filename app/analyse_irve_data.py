@@ -16,6 +16,13 @@ plt.figure(figsize=(10,7))
 plt.scatter(
     df_irve_follow_up.date.values,
     df_irve_follow_up.n_pdc.values,
+    label = '#PdC du fichier du jour'
+    )
+plt.scatter(
+    df_irve_follow_up.date.values,
+    df_irve_follow_up.n_pdc_robust.values,
+    label = '#PdC du fichier robuste',
+    marker='P'
     )
 plt.legend()
 plt.grid(True)
