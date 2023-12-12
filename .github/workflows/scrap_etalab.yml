@@ -32,6 +32,9 @@ jobs:
       - name: RunScrappingScript
         run: |
           poetry run python app/clean_irve_data.py
+      - name: RunCombinedScript
+        run: |
+          poetry run python app/combined_irve_data.py
       - name: CompleteFollowUp
         run: |
           poetry run python app/complete_irve_data_followup.py
