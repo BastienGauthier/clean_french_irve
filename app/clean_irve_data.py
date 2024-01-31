@@ -9,24 +9,23 @@ df_irve_clean.puissance_nominale = df_irve.puissance_nominale.apply(
     lambda x: x if x < 2000 else x / 1000
 )
 
-# Remove doubles, depending on their last modifications 
+# Remove doubles, depending on their last modifications
 # rows are ordered by id_pdc_itinerance and last_modified in an increasing order
-df_irve_clean = df_irve_clean.sort_values(['id_pdc_itinerance', 'last_modified'])
+df_irve_clean = df_irve_clean.sort_values(["id_pdc_itinerance", "last_modified"])
 
 # id_pdc_itinerance is supposed to be a unique ID
-df_irve_clean = df_irve_clean.drop_duplicates('id_pdc_itinerance', keep='last') 
+df_irve_clean = df_irve_clean.drop_duplicates("id_pdc_itinerance", keep="last")
 
 # Write new file
-df_irve_clean.to_csv('data/df_irve_etalab_cleaned.csv')
+df_irve_clean.to_csv("data/df_irve_etalab_cleaned.csv")
 
 # Read data to detect if no regression occured
 df_irve_clean_robust = pd.read_csv(
-    'data/df_irve_etalab_cleaned_robust.csv', 
-    index_col = 0
-    )
+    "data/df_irve_etalab_cleaned_robust.csv", index_col=0
+)
 
 n_pdc = df_irve_clean.shape[0]
 n_pdc_robust = df_irve_clean_robust.shape[0]
 
 if n_pdc >= n_pdc_robust:
-    df_irve_clean.to_csv('data/df_irve_etalab_cleaned_robust.csv')
+    df_irve_clean.to_csv("data/df_irve_etalab_cleaned_robust.csv")
