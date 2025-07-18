@@ -5,14 +5,14 @@ import datetime as dt
 
 # %%
 # Reading data
-df_irve_clean = pd.read_csv("data/df_irve_etalab_cleaned.csv", index_col=0)
+df_irve_clean = pd.read_parquet("data/df_irve_etalab_cleaned.parquet")
 
-df_irve_clean_robust = pd.read_csv(
-    "data/df_irve_etalab_cleaned_robust.csv", index_col=0
+df_irve_clean_robust = pd.read_parquet(
+    "data/df_irve_etalab_cleaned_robust.parquet"
 )
 
-df_irve_clean_combined = pd.read_csv(
-    "data/df_irve_etalab_cleaned_combined.csv", index_col=0
+df_irve_clean_combined = pd.read_parquet(
+    "data/df_irve_etalab_cleaned_combined.parquet"
 )
 
 # %%

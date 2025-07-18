@@ -3,7 +3,7 @@
 import pandas as pd
 import numpy as np
 import datetime as dt
-
+from utils import type_df_irve
 
 # %%
 # Combined function
@@ -98,10 +98,10 @@ def update_date_origine(df_combined, df_new, df_origine):
 # %%
 # Main
 if __name__ == "__main__":
-    df_irve_clean = pd.read_csv("data/df_irve_etalab_cleaned.csv", index_col=0)
+    df_irve_clean = pd.read_parquet("data/df_irve_etalab_cleaned.parquet")
 
-    df_irve_clean_combined = pd.read_csv(
-        "data/df_irve_etalab_cleaned_combined.csv", index_col=0
+    df_irve_clean_combined = pd.read_parquet(
+        "data/df_irve_etalab_cleaned_combined.parquet"
     )
 
     df_origine = pd.read_csv("data/irve_combined_data_follow_up.csv", index_col=0)
@@ -113,7 +113,8 @@ if __name__ == "__main__":
     df_new = clean_code_insee(df_new)
 
     df_combined_updated = add_daily_file_to_combined(df_combined, df_new)
-    df_combined_updated.to_csv("data/df_irve_etalab_cleaned_combined.csv")
+    df_combined_updated = type_df_irve(df_combined_updated)
+    df_combined_updated.to_parquet("data/df_irve_etalab_cleaned_combined.parquet")
 
     df_new_origin = update_date_origine(df_combined, df_new, df_origine)
     df_new_origin.to_csv("data/irve_combined_data_follow_up.csv")
