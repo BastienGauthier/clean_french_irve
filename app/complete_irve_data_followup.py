@@ -12,7 +12,7 @@ df_irve_clean_robust = pd.read_parquet(
 )
 
 df_irve_clean_combined = pd.read_parquet(
-    "data/df_irve_etalab_cleaned_combined.parquet", index_col=0
+    "data/df_irve_etalab_cleaned_combined.parquet"
 )
 
 # %%
