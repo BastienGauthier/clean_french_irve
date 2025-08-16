@@ -9,6 +9,7 @@ APP_FOLDER = str(Path(__file__).parent.parent)
 
 def type_df_irve(df_irve : pd.DataFrame):
     df_irve.code_insee_commune = df_irve.code_insee_commune.astype(str)
+    df_irve.tarification = df_irve.tarification.astype(str)
     df_irve.prise_type_ef= df_irve.prise_type_ef.astype(bool)
     df_irve.prise_type_2 = df_irve.prise_type_2.astype(bool) 
     df_irve.prise_type_combo_ccs = df_irve.prise_type_combo_ccs.astype(bool) 
