@@ -94,6 +94,11 @@ def update_date_origine(df_combined, df_new, df_origine):
 
     return df_new_origin
 
+def filter_old_irve(df_combined, df_origine):
+    # filter irve older than 1 year
+    mask = pd.to_datetime(df_origine["date_derniere_vue"])+dt.timedelta(days=365) > dt.datetime.today()
+    df_combined = df_combined.set_index("id_pdc_itinerance")
+    return df_combined[mask].reset_index()
 
 # %%
 # Main
@@ -109,6 +114,7 @@ if __name__ == "__main__":
     df_combined = filter_wrong_id(
         df_irve_clean_combined
     )  # safety, should not be useful
+    df_combined = filter_old_irve(df_combined, df_origine)
     df_new = filter_wrong_id(df_irve_clean)
     df_new = clean_code_insee(df_new)
 
