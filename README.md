@@ -16,7 +16,8 @@ Plusieurs aménageurs déposent des données avec des puissance exprimées en Wa
 N.B.:  Mal renseignées, les bornes de 1.5kW à distination des vélos électriques principalement, peuvent donc être confondue avec des bornes de 1.5MW, qui sont plutôt des bornes de recharge rapide pour camion (peu répandues en 2023).
 
 ## Evolution du nombre de point de connection en base
-Le nombre de point de connection en base dépend à la fois du nombre de point de connection effectivement installé et des déclarations effectuées sur le site de data.gouv.fr.
+Le nombre de point de connection en base dépend à la fois du nombre de point de connection effectivement installé et des déclarations effectuées sur le site de data.gouv.fr.  
+A partir du 2025-08-18, un filtre a été ajouté pour ne plus compter les bornes qui n'ont pas été vues depuis plus d'un an, d'où la perte de 10.000 pdc à cette date.  
 
 ![](img/irve_data_follow_up.png)
 
