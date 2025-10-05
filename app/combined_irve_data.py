@@ -96,9 +96,10 @@ def update_date_origine(df_combined, df_new, df_origine):
 
 def filter_old_irve(df_combined, df_origine):
     # filter irve older than 1 year
-    mask = pd.to_datetime(df_origine["date_derniere_vue"])+dt.timedelta(days=365) > dt.datetime.today()
-    df_combined = df_combined.set_index("id_pdc_itinerance")
-    return df_combined[mask].reset_index()
+    mask_origin = pd.to_datetime(df_origine["date_derniere_vue"])+dt.timedelta(days=365) > dt.datetime.today()
+    list_pdc_seen_recently = mask_origin[mask_origin].index.drop_duplicates()
+    mask_combined = df_combined.id_pdc_itinerance.isin(list_pdc_seen_recently)
+    return df_combined[mask_combined]
 
 # %%
 # Main
