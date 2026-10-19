@@ -1,19 +1,14 @@
-[tool.poetry]
+[project]
 name = "clean-french-irve"
 version = "0.1.0"
 description = ""
+requires-python = ">=3.14"
 authors = ["Bastien GAUTHIER"]
 license = "MIT"
 readme = "README.md"
 packages = [{include = "clean_french_irve"}]
-
-[tool.poetry.dependencies]
-python = "^3.10"
-pandas = "^2.0"
-pyarrow = "^20"
-matplotlib = "^3.7"
-
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+dependencies = [
+    "matplotlib>=3.11.2",
+    "pandas>=3.0.6",
+    "pyarrow>=26.0.0",
+]
