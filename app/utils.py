@@ -2,7 +2,7 @@ from pathlib import Path
 import pandas as pd
 
 URL_STABLE_DATAGOUV = (
-    "https://www.data.gouv.fr/fr/datasets/r/eb76d20a-8501-400e-b336-d85724de5435"
+    "https://www.data.gouv.fr/api/1/datasets/r/4ca78c71-4ea4-475d-bd3a-d4aef88f7bf8"
 )
 
 APP_FOLDER = str(Path(__file__).parent.parent)
