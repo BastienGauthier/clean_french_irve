@@ -12,7 +12,7 @@ df_irve_clean.puissance_nominale = df_irve.puissance_nominale.apply(
 
 # Remove doubles, depending on their last modifications
 # rows are ordered by id_pdc_itinerance and last_modified in an increasing order
-df_irve_clean = df_irve_clean.sort_values(["id_pdc_itinerance", "last_modified"])
+df_irve_clean = df_irve_clean.sort_values(["id_pdc_itinerance", "datagouv_last_modified"])
 
 # id_pdc_itinerance is supposed to be a unique ID
 df_irve_clean = df_irve_clean.drop_duplicates("id_pdc_itinerance", keep="last")
