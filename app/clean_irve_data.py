@@ -1,7 +1,15 @@
 import pandas as pd
 from utils import URL_STABLE_DATAGOUV, type_df_irve
 
-df_irve = pd.read_csv(URL_STABLE_DATAGOUV)
+df_irve = pd.read_csv(
+    URL_STABLE_DATAGOUV,
+    dtype={
+        "telephone_operateur": "string",
+        "code_insee_commune": "string",
+        "num_pdl": "string",
+    },
+    low_memory=False,
+)
 df_irve = type_df_irve(df_irve)
 
 # Clean power in W instead of kW (>2MW should not exist)
